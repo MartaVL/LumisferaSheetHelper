@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/back"
+        android:icon="@drawable/ic_back"
+        android:title="Back"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/save"
+        android:icon="@drawable/ic_save"
+        android:title="Save"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/general"
+        app:showAsAction="never"
+        android:title="@string/general"/>
+    <item
+        android:id="@+id/combat"
+        app:showAsAction="never"
+        android:title="@string/combat"/>
+    <item
+        android:id="@+id/magic"
+        app:showAsAction="never"
+        android:title="@string/magic"/>
+    <item
+        android:id="@+id/equip"
+        app:showAsAction="never"
+        android:title="@string/equip"/>
+
+</menu>

@@ -1,3 +1,87 @@
 <resources>
-    <string name="app_name">LumisferaSheetHelper</string>
+    <string name="app_name">LumisferaPlayerHelper</string>
+    <string name="createSheet">Crear ficha</string>
+    <string name="loadSheet">Cargar ficha</string>
+    <string name="manual">Manual</string>
+    <string name="wizard">Asistente</string>
+    <string name="template">Plantilla</string>
+    <string name="open">abierto</string>
+    <string name="close">cerrado</string>
+    <string name="race">Raza</string>
+    <string name="actitude">Actitud Inicial</string>
+    <string name="name">Nombre</string>
+    <string name="general">General</string>
+    <string name="combat">Combate</string>
+    <string name="magic">Magia</string>
+    <string name="equip">Equipo</string>
+    <string name="experience">Px</string>
+    <string name="level">Nivel</string>
+    <string name="gastado">Gastado</string>
+    <string name="talentos">Talentos</string>
+    <string name="ganado">Ganado</string>
+    <string name="restantes">Restantes</string>
+    <string name="nexo">Nexo</string>
+    <string name="arquetipo">Arquetipo</string>
+    <string name="carrera">Carrera</string>
+    <string name="doctrina">Doctrina</string>
+    <string name="religion">Religion</string>
+
+    <string-array name="races">
+        <item>Elfo</item>
+        <item>Humano</item>
+        <item>Enano</item>
+        <item>Aviari</item>
+        <item>Gnomo</item>
+        <item>Jotnar</item>
+    </string-array>
+
+    <string-array name="actitudes">
+        <item>Afable</item>
+        <item>Rudo</item>
+        <item>Grosero</item>
+        <item>Corriente</item>
+    </string-array>
+
+    <string-array name="carreras">
+        <item>Guerrero</item>
+        <item>Granuja</item>
+        <item>Mago</item>
+        <item>Teurgo</item>
+        <item>Estadista</item>
+    </string-array>
+
+    <string-array name="nexos">
+    <item>Vida</item>
+    <item>Materia</item>
+    <item>Anima</item>
+    <item>Inmaterium</item>
+    <item>S/N</item>
+    </string-array>
+
+    <string-array name="arquetipos">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="religiones">
+        <item>Demiurgo</item>
+        <item>Panteon Elfo</item>
+        <item>Panteon Enano</item>
+        <item>Panteon Varuktar</item>
+        <item>Panteon Yizidis</item>
+        <item>Paganismo</item>
+        <item>Panteon Arbithio</item>
+        <item>Panteon Venabingio</item>
+        <item>Yigerfein</item>
+        <item>Adhaiyi</item>
+    </string-array>
+
+    <string-array name="demiurgo">
+        <item>Salvacionista</item>
+        <item>Armonista</item>
+        <item>Destruccionista</item>
+        <item>Creacionista</item>
+    </string-array>
+
+
 </resources>
