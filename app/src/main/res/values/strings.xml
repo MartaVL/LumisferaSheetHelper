@@ -42,14 +42,6 @@
         <item>Corriente</item>
     </string-array>
 
-    <string-array name="carreras">
-        <item>Guerrero</item>
-        <item>Granuja</item>
-        <item>Mago</item>
-        <item>Teurgo</item>
-        <item>Estadista</item>
-    </string-array>
-
     <string-array name="nexos">
     <item>Vida</item>
     <item>Materia</item>
@@ -58,18 +50,70 @@
     <item>S/N</item>
     </string-array>
 
-    <string-array name="arquetipos">
-        <item>1</item>
-        <item>2</item>
+    <!-- carreras - arquetipos -->
+
+    <string-array name="carreras">
+        <item>Luchador</item>
+        <item>Granuja</item>
+        <item>Teurgo</item>
+        <item>Estadista</item>
+        <item>Mago</item>
     </string-array>
 
+    <string-array name="luchador">
+        <item>Primer</item>
+        <item>Mercenario</item>
+        <item>Barbaro</item>
+        <item>Caballero</item>
+        <item>Pirata</item>
+        <item>S/N</item>
+    </string-array>
+
+    <string-array name="granuja">
+        <item>Estafador</item>
+        <item>Ladrón</item>
+        <item>Cazarrecompensas</item>
+        <item>Ballestero Imperial</item>
+        <item>Buscador de tesoros</item>
+        <item>S/N</item>
+    </string-array>
+
+    <string-array name="teurgo">
+        <item>Predicador</item>
+        <item>Misionero</item>
+        <item>Druida</item>
+        <item>Paladin</item>
+        <item>Consejero Espiritual</item>
+        <item>S/N</item>
+    </string-array>
+
+    <string-array name="estadista">
+        <item>Cortesano</item>
+        <item>Diplomatico</item>
+        <item>Proservón</item>
+        <item>Arqueologo</item>
+        <item>Abogado</item>
+        <item>S/N</item>
+    </string-array>
+
+    <string-array name="mago">
+        <item>Consejero</item>
+        <item>Pacificador</item>
+        <item>Asalariado</item>
+        <item>Mago de batalla</item>
+        <item>Buscamagia</item>
+        <item>S/N</item>
+    </string-array>
+
+    <!-- fin carreras - arquetipos -->
+
+    <!-- religion - doctrinas -->
     <string-array name="religiones">
         <item>Demiurgo</item>
         <item>Panteon Elfo</item>
         <item>Panteon Enano</item>
         <item>Panteon Varuktar</item>
         <item>Panteon Yizidis</item>
-        <item>Paganismo</item>
         <item>Panteon Arbithio</item>
         <item>Panteon Venabingio</item>
         <item>Yigerfein</item>
@@ -79,9 +123,70 @@
     <string-array name="demiurgo">
         <item>Salvacionista</item>
         <item>Armonista</item>
-        <item>Destruccionista</item>
-        <item>Creacionista</item>
+        <item>Catastofrista</item>
     </string-array>
+
+    <string-array name="panteonElfo">
+        <item>Sha\'Ark</item>
+        <item>Deanté</item>
+        <item>Danita</item>
+        <item>Megorath</item>
+        <item>Malfell</item>
+    </string-array>
+
+    <string-array name="panteonEnano">
+        <item>El Creador</item>
+        <item>El Instructor</item>
+        <item>El Guardian</item>
+    </string-array>
+
+    <string-array name="panteonVaruktar">
+        <item>Rokga</item>
+        <item>Kagjan</item>
+        <item>Morkantul</item>
+        <item>Ikman</item>
+    </string-array>
+
+    <string-array name="panteonYizidis">
+        <item>Awe</item>
+        <item>Ulule</item>
+        <item>Deimi</item>
+        <item>Halcyon</item>
+        <item>Sherende</item>
+    </string-array>
+
+    <string-array name="panteonArbithio">
+        <item>Arbiskar</item>
+        <item>Kasdail</item>
+        <item>Achiel</item>
+        <item>Gorykael</item>
+        <item>Rauma Dresidae</item>
+        <item>Meraie</item>
+        <item>Sharamina</item>
+    </string-array>
+
+    <string-array name="panteonVenabingio">
+        <item>Barbal</item>
+        <item>Letha</item>
+        <item>Hadram</item>
+        <item>Idwar</item>
+        <item>Bilitha</item>
+    </string-array>
+
+    <string-array name="panteonYigerfein">
+        <item>Sandall</item>
+        <item>Orom</item>
+        <item>Bela</item>
+        <item>Rhiamono</item>
+    </string-array>
+
+    <string-array name="panteonAdhaiyi">
+        <item>Yerende</item>
+        <item>Maha</item>
+        <item>Aniyah</item>
+    </string-array>
+
+    <!-- fin dios - doctrinas -->
 
 
 </resources>

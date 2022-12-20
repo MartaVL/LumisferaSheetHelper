@@ -36,25 +36,77 @@ class GeneralSheetFragment() : Fragment() {
         val autocompleteNexo = binding.chooseNexo
         autocompleteNexo.setAdapter(adapterNexo)
 
-        val arquetipos = resources.getStringArray(R.array.arquetipos)
-        val adapterArquetipos = ArrayAdapter(requireContext(), R.layout.dropdown_item, arquetipos)
-        val autocompleteArquetipo = binding.chooseArquetipo
-        autocompleteArquetipo.setAdapter(adapterArquetipos)
-
         val carreras = resources.getStringArray(R.array.carreras)
         val adapterCarreras = ArrayAdapter(requireContext(), R.layout.dropdown_item, carreras)
         val autocompleteCarrera = binding.chooseCarrera
         autocompleteCarrera.setAdapter(adapterCarreras)
+
+        autocompleteCarrera.setOnItemClickListener { _, _, position, _ ->
+            var arquetipos: Array<out String>
+            when(position) {
+                1 -> {
+                    arquetipos = resources.getStringArray(R.array.granuja)
+                }
+                2 -> {
+                    arquetipos = resources.getStringArray(R.array.teurgo)
+                }
+                3 -> {
+                    arquetipos = resources.getStringArray(R.array.estadista)
+                }
+                4 -> {
+                    arquetipos = resources.getStringArray(R.array.mago)
+                }
+                else -> {
+                    arquetipos  = resources.getStringArray(R.array.luchador)
+                }
+            }
+
+            val adapterArquetipos = ArrayAdapter(requireContext(), R.layout.dropdown_item, arquetipos)
+            val autocompleteArquetipo = binding.chooseArquetipo
+            autocompleteArquetipo.setAdapter(adapterArquetipos)
+        }
 
         val religiones = resources.getStringArray(R.array.religiones)
         val adapterReligiones = ArrayAdapter(requireContext(), R.layout.dropdown_item, religiones)
         val autocompleteReligion = binding.chooseReligion
         autocompleteReligion.setAdapter(adapterReligiones)
 
-        /*val dioses = resources.getStringArray(R.array.empty)
-        val adapterDioses = ArrayAdapter(requireContext(), R.layout.dropdown_item, dioses)
-        val autocompleteDios = binding.chooseDios
-        autocompleteDios.setAdapter(adapterDioses)*/
+        autocompleteReligion.setOnItemClickListener { _, _, position, _ ->
+            var doctrinas: Array<out String>
+            when(position) {
+                1 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonElfo)
+                }
+                2 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonEnano)
+                }
+                3 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonVaruktar)
+                }
+                4 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonYizidis)
+                }
+                5 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonArbithio)
+                }
+                6 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonVenabingio)
+                }
+                7 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonYigerfein)
+                }
+                8 -> {
+                    doctrinas = resources.getStringArray(R.array.panteonAdhaiyi)
+                }
+                else -> {
+                    doctrinas  = resources.getStringArray(R.array.demiurgo)
+                }
+            }
+
+            val adapterDioses = ArrayAdapter(requireContext(), R.layout.dropdown_item, doctrinas)
+            val autocompleteDios = binding.chooseDios
+            autocompleteDios.setAdapter(adapterDioses)
+        }
 
         return binding.root
     }
