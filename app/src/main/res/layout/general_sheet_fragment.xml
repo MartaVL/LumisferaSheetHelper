@@ -5,18 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/tableMateria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tablePX"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:hint="@string/name"
         app:expandedHintEnabled="false"
         app:layout_constraintBottom_toTopOf="@+id/layoutActitud"
-        app:layout_constraintEnd_toStartOf="@+id/layoutRace"
+        app:layout_constraintEnd_toStartOf="@id/layoutRace"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -33,13 +46,14 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/race"
         app:expandedHintEnabled="false"
-        app:layout_constraintBottom_toTopOf="@+id/layoutActitud"
-        app:layout_constraintStart_toEndOf="@+id/layoutName"
+        app:layout_constraintBottom_toTopOf="@+id/layoutNexo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/layoutName"
         app:layout_constraintTop_toTopOf="parent">
 
         <AutoCompleteTextView
@@ -80,7 +94,8 @@
         app:expandedHintEnabled="false"
         app:layout_constraintStart_toEndOf="@+id/layoutActitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutRace">
+        app:layout_constraintTop_toBottomOf="@+id/layoutRace"
+        app:layout_constraintBottom_toTopOf="@+id/layoutArquetipo">
 
         <AutoCompleteTextView
             android:id="@+id/chooseNexo"
@@ -142,7 +157,7 @@
         app:layout_constraintEnd_toStartOf="@+id/layoutDoctrina"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutCarrera"
-        app:layout_constraintBottom_toTopOf="@+id/table">
+        app:layout_constraintBottom_toTopOf="@+id/tablePX">
 
         <AutoCompleteTextView
             android:id="@+id/chooseReligion"
@@ -163,7 +178,8 @@
         app:expandedHintEnabled="false"
         app:layout_constraintStart_toEndOf="@+id/layoutReligion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutArquetipo">
+        app:layout_constraintTop_toBottomOf="@+id/layoutArquetipo"
+        app:layout_constraintBottom_toTopOf="@+id/layoutLevel">
 
         <AutoCompleteTextView
             android:id="@+id/chooseDios"
@@ -172,65 +188,41 @@
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutLevel"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="63dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="25dp"
-        android:hint="@string/level"
-        app:expandedHintEnabled="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/table"
-        app:layout_constraintTop_toBottomOf="@+id/layoutDoctrina">
-
-        <EditText
-            android:id="@+id/editLevel"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:enabled="false"
-            android:inputType="number" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
     <TableLayout
-        android:id="@+id/table"
+        android:id="@+id/tablePX"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:stretchColumns="*"
-        app:layout_constraintEnd_toStartOf="@+id/layoutLevel"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/layoutLevel"
         app:layout_constraintTop_toBottomOf="@id/layoutReligion"
+        app:layout_constraintBottom_toTopOf="@id/divider"
         android:background="@drawable/border_header">
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView android:gravity="center" />
-
+        <TableRow>
+            <TextView
+                android:background="@drawable/border_corner_left_top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="12sp"/>
             <TextView
                 android:gravity="center"
                 android:padding="3dp"
                 android:text="@string/experience"
                 android:background="@drawable/border"
                 android:textSize="12sp" />
-
             <TextView
                 android:gravity="center"
                 android:padding="3dp"
                 android:text="@string/talentos"
+                android:background="@drawable/border_corner_right_top"
                 android:textSize="12sp" />
         </TableRow>
 
         <TableRow>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -239,7 +231,6 @@
                 android:text="@string/ganado"
                 android:background="@drawable/border"
                 android:textSize="12sp" />
-
             <EditText
                 android:id="@+id/editGanadaPx"
                 android:layout_width="wrap_content"
@@ -249,21 +240,18 @@
                 android:inputType="number"
                 android:padding="3dp"
                 android:textSize="12sp" />
-
             <EditText
                 android:id="@+id/editGanadaTalentos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
                 android:gravity="center"
-
                 android:inputType="number"
                 android:padding="3dp"
                 android:textSize="12sp" />
         </TableRow>
 
         <TableRow>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -272,8 +260,6 @@
                 android:text="@string/gastado"
                 android:background="@drawable/border"
                 android:textSize="12sp" />
-
-
             <TextView
                 android:id="@+id/gastadaPx"
                 android:layout_width="wrap_content"
@@ -282,7 +268,6 @@
                 android:gravity="center"
                 android:padding="3dp"
                 android:textSize="12sp" />
-
             <TextView
                 android:id="@+id/gastadaTalentos"
                 android:layout_width="wrap_content"
@@ -294,16 +279,14 @@
         </TableRow>
 
         <TableRow>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="3dp"
                 android:text="@string/restantes"
-                android:textSize="12sp" />
-
-
+                android:textSize="12sp"
+                android:background="@drawable/border_corner_left"/>
             <TextView
                 android:id="@+id/noGastadaPx"
                 android:layout_width="wrap_content"
@@ -312,18 +295,526 @@
                 android:gravity="center"
                 android:padding="3dp"
                 android:textSize="12sp" />
-
             <TextView
                 android:id="@+id/noGastadaTalentos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="3dp"
+                android:textSize="12sp"
+                android:background="@drawable/border_corner_right"/>
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutLevel"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
+        android:hint="@string/level"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tablePX"
+        app:layout_constraintTop_toBottomOf="@id/layoutDoctrina">
+
+        <EditText
+            android:id="@+id/editLevel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TableLayout
+        android:id="@+id/tableMateria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tableVida"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintBottom_toTopOf="@id/tableAnima"
+        android:background="@drawable/border_header">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_top"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/materia"
                 android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/materiaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/resistencia"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/percepcion"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/editResistencia"
+                    android:background="@drawable/border_corner_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/editPercepcion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_corner_right"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableVida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toEndOf="@id/tableMateria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:background="@drawable/border_header">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_top"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/vida"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/vidaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/fuerza"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/voluntad"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/editFuerza"
+                    android:background="@drawable/border_corner_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/editVoluntad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_corner_right"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableAnima"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tableEnergia"
+        app:layout_constraintTop_toBottomOf="@id/tableMateria"
+        android:background="@drawable/border_header">
+
+        <TableRow>
+            <TextView
+                android:background="@drawable/border_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/anima"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/animaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/destreza"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/consciencia"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/editDestreza"
+                    android:background="@drawable/border_corner_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/editConsciencia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_corner_right"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableEnergia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toEndOf="@id/tableAnima"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tableVida"
+        android:background="@drawable/border_header">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/energia"
+                android:background="@drawable/border_top"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/energiaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/agilidad"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:text="@string/inteligencia"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/editAgilidad"
+                    android:background="@drawable/border_corner_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/editInteligencia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_corner_right"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </TableRow>
 
     </TableLayout>
 
+    <TableLayout
+        android:id="@+id/tableEter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tableAnima"
+        app:layout_constraintEnd_toStartOf="@id/tablePP"
+        android:background="@drawable/border_header">
 
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/eter"
+                android:background="@drawable/border_top"
+                android:padding="3dp"
+                android:gravity="center"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/editEterGanados"
+                    android:background="@drawable/border_corner_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp"/>
+
+                <EditText
+                    android:id="@+id/editEterGastados"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_corner_right"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablePP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tableEter"
+        app:layout_constraintTop_toBottomOf="@id/tableEnergia"
+        android:background="@drawable/border_header">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/puntosPoder"
+                android:background="@drawable/border_top"
+                android:textSize="12sp" />
+        </TableRow>
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/editPuntosPoder"
+                    android:background="@drawable/border_corner_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:padding="3dp"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/puntosPoderValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_corner_right"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

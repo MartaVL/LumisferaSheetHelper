@@ -25,6 +25,20 @@
     <string name="carrera">Carrera</string>
     <string name="doctrina">Doctrina</string>
     <string name="religion">Religion</string>
+    <string name="materia">Materia</string>
+    <string name="vida">Vida</string>
+    <string name="anima">Anima</string>
+    <string name="energia">Energía</string>
+    <string name="eter">Eter</string>
+    <string name="resistencia">Resistencia</string>
+    <string name="percepcion">Percepcion</string>
+    <string name="fuerza">Fuerza</string>
+    <string name="voluntad">Voluntad</string>
+    <string name="destreza">Destreza</string>
+    <string name="consciencia">Consciencia</string>
+    <string name="agilidad">Agilidad</string>
+    <string name="inteligencia">Inteligencia</string>
+    <string name="puntosPoder">Puntos de poder</string>
 
     <string-array name="races">
         <item>Elfo</item>
